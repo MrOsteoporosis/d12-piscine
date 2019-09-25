@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/25 15:04:56 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/25 16:21:40 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/25 16:22:17 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		main(int argc, char **argv)
 		ft_putstr(buf);
 		ft_putchar('\n');
 	}
+	return (1);
 }
 
 int		error(int e)
