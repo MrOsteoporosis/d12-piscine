@@ -1,0 +1,6 @@
+A special little text file
+With a few different lines
+And lots of fun characters
+
+To print out for:
+ex00
