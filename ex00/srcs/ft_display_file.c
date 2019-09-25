@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/25 15:04:56 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/25 16:22:17 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/25 17:31:42 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@ int		main(int argc, char **argv)
 	{
 		buf[ret] = '\0';
 		ft_putstr(buf);
-		ft_putchar('\n');
 	}
 	return (1);
 }
 
-int		error(int e)
+int		ft_error(int e)
 {
 	if (e == 1)
 		ft_putstr("Too many arguements.\n");
