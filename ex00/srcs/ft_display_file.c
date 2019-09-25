@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/25 15:04:56 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/25 17:31:42 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/25 17:38:21 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int		main(int argc, char **argv)
 	int		ret;
 
 	if (argc > 2)
-		return (error(1));
+		return (ft_error(1));
 	else if (argc < 2)
-		return (error(2));
+		return (ft_error(2));
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		return (error(3));
+		return (ft_error(3));
 	while ((ret = read(fd, buf, BUF_SIZE)))
 	{
 		buf[ret] = '\0';
