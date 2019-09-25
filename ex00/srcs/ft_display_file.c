@@ -6,12 +6,11 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/25 15:04:56 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/25 15:58:43 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/25 16:21:40 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_display_file.h"
-#include "ft_libft.h"
 
 int		main(int argc, char **argv)
 {
@@ -20,24 +19,27 @@ int		main(int argc, char **argv)
 	int		ret;
 
 	if (argc > 2)
-	{
-		ft_putstr("Too many arguements.\n");
-		return (0);
-	}
+		return (error(1));
 	else if (argc < 2)
-	{
-		ft_putstr("File name missing.\n");
-		return (0);
-	}
+		return (error(2));
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-	{
-		ft_putstr("Bad file/path: Open returned -1.\n");
-	}
+		return (error(3));
 	while ((ret = read(fd, buf, BUF_SIZE)))
 	{
 		buf[ret] = '\0';
 		ft_putstr(buf);
 		ft_putchar('\n');
 	}
+}
+
+int		error(int e)
+{
+	if (e == 1)
+		ft_putstr("Too many arguements.\n");
+	else if (e == 2)
+		ft_putstr("File name missing.\n");
+	else if (e == 3)
+		ft_putstr("Bad file/path: Open returned -1.\n");
+	return (0);
 }
