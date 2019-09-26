@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/25 16:28:26 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/25 17:29:46 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/26 08:55:47 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,15 @@ void	ft_catecho(void)
 {
 	char	input[BUF_SIZE];
 	int		i;
+	int		ret;
 
 	while (1)
 	{
 		i = 0;
 		while (i < BUF_SIZE)
 			input[i++] = 0;
-		read(1, input, BUF_SIZE - 1);
-		input[BUF_SIZE - 1] = '\0';
+		ret = read(1, input, BUF_SIZE);
+		input[ret] = '\0';
 		ft_putstr(input);
 	}
 }
